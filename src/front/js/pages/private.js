@@ -6,8 +6,18 @@ import { Context } from "../store/appContext";
 
 export const Private = props => {
 	const { store, actions } = useContext(Context);
-	
+
 	const navigate = useNavigate();
+
+	const handleLogout = () => {
+		actions.logout();
+		navigate("/");
+		window.location.reload();
+	};
+
+
+
+
 
 	useEffect(() => {
 		if (!store.user) {
@@ -20,8 +30,10 @@ export const Private = props => {
 			<h1 className="display-4">Hello Welcome!, {store.user ? store.user.email : "user"}!</h1>
 
 			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
+				<span className="btn btn-primary btn-lg" href="#" role="button"
+					onClick={handleLogout}
+				>
+					logout
 				</span>
 			</Link>
 		</div>

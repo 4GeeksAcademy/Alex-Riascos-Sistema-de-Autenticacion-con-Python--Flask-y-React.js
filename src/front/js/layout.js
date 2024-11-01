@@ -4,7 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
+
 import { Private } from "./pages/private";
 import injectContext from "./store/appContext";
 
@@ -28,7 +28,7 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
-                        <Route element={<Demo />} path="/demo" />
+
                         <Route element={<Private />} path="/private" />
                         <Route element={<Register />} path="/register" />
                         <Route element={<Login />} path="/login" />

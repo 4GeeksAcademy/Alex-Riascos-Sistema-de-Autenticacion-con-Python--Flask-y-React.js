@@ -12,7 +12,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle login logic here
+
         console.log('Email:', email);
         console.log('Password:', password);
 
@@ -21,14 +21,15 @@ const Login = () => {
 
             setEmail("");
             setPassword("");
+            navigate("/private");
+        } else {
 
-
-            navigate("/private"); // Redirigir después del registro
-
+            alert("No se pudo iniciar sesión");
         }
-        alert("No se pudo iniciar sesión");
 
     };
+
+
     useEffect(() => {
         if (store.user) {
             navigate("/private");
